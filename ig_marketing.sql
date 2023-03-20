@@ -6,7 +6,7 @@ FROM users
 GROUP BY day
 ORDER BY total DESC;
 
--- We want to target inactive users with an email campaign. Find the users who have never posted a photo
+-- We want to target inactive users with an email campaign. Find the users who have never posted a photo.
 SELECT 
 	username 
 FROM users
@@ -48,5 +48,3 @@ INNER JOIN likes ON users.id = likes.user_id
 GROUP BY likes.user_id 
 HAVING num_likes = (SELECT Count(*) 
 FROM photos); 
-                    
--- testing change test bad merging
